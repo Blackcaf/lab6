@@ -32,7 +32,6 @@ public class ClientApp {
 
             Object payload = null;
 
-            // команды, требующие объект
             if (command.equalsIgnoreCase("add")
                     || command.equalsIgnoreCase("update")
                     || command.equalsIgnoreCase("remove_lower")) {
