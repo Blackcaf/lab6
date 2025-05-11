@@ -2,6 +2,9 @@
 вариант 7900
 
 ![image](https://github.com/Blackcaf/lab6/blob/main/Client.png)
+![image](https://github.com/Blackcaf/lab6/blob/main/Server.png)
+![image](https://github.com/Blackcaf/lab6/blob/main/Client2.png)
+![image](https://github.com/Blackcaf/lab6/blob/main/Server2.png)
 
 Разделить программу из лабораторной работы №5 на клиентский и серверный модули. Серверный модуль должен осуществлять выполнение команд по управлению коллекцией. Клиентский модуль должен в интерактивном режиме считывать команды, передавать их для выполнения на сервер и выводить результаты выполнения.
 
