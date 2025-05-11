@@ -57,7 +57,7 @@ public class HumanBeingAsker {
      * Запрашивает данные для создания объекта {@link HumanBeing} без указания id.
      */
     public HumanBeing askHumanBeing() {
-        return askHumanBeing(0); // id будет установлен в CollectionManager.add()
+        return askHumanBeing(0); 
     }
 
     private Coordinates askCoordinates() {
