@@ -1,11 +1,6 @@
 # lab6
 вариант 7900
 
-![image](https://github.com/Blackcaf/lab6/blob/main/Client.png)
-![image](https://github.com/Blackcaf/lab6/blob/main/Server.png)
-![image](https://github.com/Blackcaf/lab6/blob/main/Client2.png)
-![image](https://github.com/Blackcaf/lab6/blob/main/Server2.png)
-
 Разделить программу из лабораторной работы №5 на клиентский и серверный модули. Серверный модуль должен осуществлять выполнение команд по управлению коллекцией. Клиентский модуль должен в интерактивном режиме считывать команды, передавать их для выполнения на сервер и выводить результаты выполнения.
 
 Необходимо выполнить следующие требования:
@@ -50,3 +45,8 @@
 Дополнительное задание:
 
 Реализовать логирование различных этапов работы сервера (начало работы, получение нового подключения, получение нового запроса, отправка ответа и т.п.) с помощью Log4J2
+
+![image](https://github.com/Blackcaf/lab6/blob/main/Client.png)
+![image](https://github.com/Blackcaf/lab6/blob/main/Server.png)
+![image](https://github.com/Blackcaf/lab6/blob/main/Client2.png)
+![image](https://github.com/Blackcaf/lab6/blob/main/Server2.png)
