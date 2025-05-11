@@ -23,7 +23,6 @@ public class ServerApp {
         CollectionManager collectionManager = new CollectionManager(fileManager);
         CommandManager commandManager = new CommandManager(collectionManager, new SilentConsole());
 
-        // 🔁 Поток для ввода команд на сервере (save/exit)
         new Thread(() -> {
             Scanner scanner = new Scanner(System.in);
             while (true) {
@@ -43,13 +42,11 @@ public class ServerApp {
             }
         }).start();
 
-        // 🔚 Хук завершения
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             collectionManager.saveCollection();
             System.out.println("Коллекция сохранена при завершении.");
         }));
 
-        // 📡 Основной серверный цикл
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Сервер запущен на порту " + port);
 
@@ -69,23 +66,19 @@ public class ServerApp {
 
                     ExecutionResponse execResult;
 
-                    // 🧠 Команды, требующие объект
                     if ((commandName.equalsIgnoreCase("add")
                             || commandName.equalsIgnoreCase("update")
                             || commandName.equalsIgnoreCase("remove_lower"))
                             && payload instanceof HumanBeing human) {
 
-                        // Добавление или сравнение объекта через временный механизм
-                        collectionManager.setTempHuman(human); // если реализовано
+                        collectionManager.setTempHuman(human);
                         execResult = commandManager.execute(
                                 commandName + " " + String.join(" ", argsArray)
                         );
 
                     } else if (commandName.equalsIgnoreCase("execute_script")) {
-                        // 📜 Чтение скрипта на сервере
                         execResult = executeScriptOnServer(argsArray[0], commandManager);
                     } else {
-                        // 💡 Прочие команды
                         execResult = commandManager.execute(
                                 commandName + " " + String.join(" ", argsArray)
                         );
@@ -110,7 +103,6 @@ public class ServerApp {
         }
     }
 
-    // 🧩 Выполнение скрипта сервером
     private static ExecutionResponse executeScriptOnServer(String path, CommandManager commandManager) {
         File file = new File(path);
         if (!file.exists() || !file.canRead()) {
